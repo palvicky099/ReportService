@@ -1,0 +1,25 @@
+<div class="container topMargin" >
+  <div class="card custom_form"> 
+      <div class="card-body">
+          <form [formGroup]="reportForm">
+            <div class="form-group">
+              <label for="email">Email address *</label>
+              <input type="email" class="form-control" id="email" placeholder="Email" formControlName="username" name="username">
+            </div>
+            <div class="form-group">
+              <label for="dob">DOB</label>
+              <input type="date" class="form-control" id="dob" placeholder="DOB" formControlName="dob" name="dob">
+            </div>
+
+            <div class="form-group">
+              <label >Type</label>
+              <ng-select [items]="selectData" bindLabel="ListText" bindValue="ListValue"  class="st_select" formControlName="type" name="type"></ng-select>
+            </div>
+
+            <div class="form-group">
+            <button type="submit" [disabled]="!reportForm.valid" class="btn btn-default" (click)="generate()">Generate Report</button>
+          </div>
+          </form>
+      </div>
+    </div>
+</div>
